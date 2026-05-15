@@ -17,3 +17,16 @@ This project implements:
 - Fixed-point EMA filter
 - Hardware-synchronized sampling
 - Minimal AVR register-level implementation
+
+
+## Problem Statement
+
+Design a bare-metal embedded system on ATmega328PB that:
+
+- Generates Phase-Correct PWM on Timer0 (PD6)
+- Achieves approximately 2 kHz control/sampling rate
+- Performs ADC sampling synchronized with PWM using Timer0 overflow trigger
+- Applies exponential moving average (EMA) filtering to ADC readings
+- Converts filtered ADC value into current (0–100 A scale)
+- Transmits current data over UART at ~10 Hz
+- Ensures non-blocking, interrupt-safe design
